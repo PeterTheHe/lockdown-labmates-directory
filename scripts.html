@@ -19,7 +19,11 @@
       db = JSON.parse(db);
       // Populate the table
       for (var i = 1; i < db.length; i++){
-        table.row.add(['<a href="' + db[i][2] + '">' + db[i][1] + '<a>', // name
+        // someone please shoot me
+        table.row.add([ db[i][1] + // name
+                        (db[i][2] == '' ? '' : '<br><a href="' + db[i][2] + '"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>') +     // fb
+                        (db[i][11] == '' ? '' : '&nbsp <a href="' + db[i][11] + '"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>') + // linkedin,
+                        (db[i][9] == '' ? '' : '&nbsp <a href="mailto:' + db[i][9] + '"><i class="fa fa-envelope" aria-hidden="true"></i></a>'),           // email
                         db[i][3], // school
                         db[i][4], // what im looking for
                         db[i][5], // about
